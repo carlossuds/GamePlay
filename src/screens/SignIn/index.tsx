@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Image, Text, StatusBar } from 'react-native';
+import { View, Image, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { ButtonIcon } from '../../components/ButtonIcon';
 
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
 
 export const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
+  const handleSignIn = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-
       <Image
         source={IllustrationImg}
         style={styles.image}
@@ -29,7 +31,7 @@ export const SignIn: React.FC = () => {
           Crie grupos para jogar seus games {'\n'}favoritos com seus amigos
         </Text>
 
-        <ButtonIcon title="Entrar com Discord" />
+        <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} />
       </View>
     </View>
   );
