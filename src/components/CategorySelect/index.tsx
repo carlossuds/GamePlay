@@ -6,9 +6,13 @@ import { categories } from '../../utils/categories';
 
 interface Props {
   categorySelected: string;
+  setCategory: (category: string) => void;
 }
 
-export const CategorySelect: React.FC<Props> = ({ categorySelected }) => {
+export const CategorySelect: React.FC<Props> = ({
+  categorySelected,
+  setCategory,
+}) => {
   return (
     <ScrollView
       style={styles.container}
@@ -22,6 +26,7 @@ export const CategorySelect: React.FC<Props> = ({ categorySelected }) => {
           icon={category.icon}
           title={category.title}
           checked={category.id === categorySelected}
+          onPress={() => setCategory(category.id)}
         />
       ))}
     </ScrollView>

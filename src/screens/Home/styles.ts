@@ -12,4 +12,10 @@ export const styles = StyleSheet.create({
     marginTop: 70,
     marginBottom: 42,
   },
+  content: {
+    marginTop: 42,
+  },
+  list: {
+    marginTop: 24,
+  },
 });

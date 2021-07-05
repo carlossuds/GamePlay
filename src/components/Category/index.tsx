@@ -16,11 +16,12 @@ export const Category: React.FC<Props> = ({
   title,
   icon: Icon,
   checked = false,
+  ...rest
 }) => {
   const { secondary50, secondary70 } = theme.colors;
 
   return (
-    <RectButton>
+    <RectButton {...rest}>
       <LinearGradient
         style={styles.container}
         colors={[secondary50, secondary70]}
